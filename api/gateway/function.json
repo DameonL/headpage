@@ -1,0 +1,22 @@
+{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "post"
+      ],
+      "route": "gateway"
+    },
+    {
+      "type": "queue",
+      "direction": "out",
+      "name": "queue",
+      "queueName": "frontend-messages",
+      "connection": "storageConnectionString"
+    }
+  ],
+  "scriptFile": "../dist/posts/index.js"
+}
