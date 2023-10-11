@@ -18,5 +18,5 @@
       "connection": "storageConnectionString"
     }
   ],
-  "scriptFile": "../dist/posts/index.js"
+  "scriptFile": "../build/posts/index.js"
 }
