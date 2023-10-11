@@ -1,6 +1,10 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
+import { h, render } from "preact";
 import Headpage from "./components/Headpage";
 
-const root = createRoot(document.body);
-root.render(<Headpage />);
+function initializeForeground() {
+  const rootElement = document.createElement("div");
+  document.body.appendChild(rootElement);
+  render(<Headpage />, rootElement);
+}
+
+initializeForeground();

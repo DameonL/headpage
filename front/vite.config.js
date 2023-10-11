@@ -6,8 +6,8 @@ export default defineConfig({
   appType: "spa",
   envDir: "./",
   esbuild: {
-    jsxFactory: "React.createElement",
-    jsxFragment: "React.Fragment",
+    jsxFactory: "h",
+    jsxFragment: "Fragment",
   },
   build: {
     lib: {
@@ -25,7 +25,7 @@ export default defineConfig({
   },
   vite: {
     define: {
-      global: {},
+      "process.env.NODE_ENV": JSON.stringify(process.env.MODE),
     },
   },
 });
