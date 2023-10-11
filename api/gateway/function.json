@@ -1,22 +1,19 @@
 {
   "bindings": [
     {
-      "authLevel": "function",
+      "authLevel": "anonymous",
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
       "methods": [
         "post"
-      ],
-      "route": "gateway"
+      ]
     },
     {
-      "type": "queue",
+      "type": "http",
       "direction": "out",
-      "name": "queue",
-      "queueName": "frontend-messages",
-      "connection": "storageConnectionString"
+      "name": "res"
     }
   ],
-  "scriptFile": "../build/posts/index.js"
+  "scriptFile": "../build/gateway/index.js"
 }

@@ -1,22 +1,17 @@
-import { AzureFunction, Context, HttpRequest } from "@azure/functions";
-import BackendMessage from "headpage/BackendMessage";
+import { AzureFunction, Context, HttpRequest } from "@azure/functions"
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
-  let incomingMessage: BackendMessage<any> | undefined = req.body;
+    context.log('HTTP trigger function processed a request.');
+    const name = (req.query.name || (req.body && req.body.name));
+    const responseMessage = name
+        ? "Hello, " + name + ". This HTTP triggered function executed successfully."
+        : "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.";
 
-  if (!validateMessage) {
     context.res = {
-      status: 400
+        // status: 200, /* Defaults to 200 */
+        body: responseMessage
     };
-  }
+
 };
 
 export default httpTrigger;
-
-function validateMessage(message: BackendMessage<any>): boolean {
-  if (!message.targetServiceId || message.targetServiceId === "") {
-    return false;
-  }
-
-  return true;
-}
