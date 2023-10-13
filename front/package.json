@@ -14,9 +14,6 @@
   },
   "dependencies": {
     "@azure/msal-browser": "^3.2.0",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.14.13",
     "preact": "^10.18.1"
   }
 }
